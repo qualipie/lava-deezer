@@ -10,4 +10,4 @@ yarn add lava-deezer
 ```
 
 ## Example Usage
-<a href="https://github.com/MaaKoo-dev/lava-deezer"> <img src="https://media.discordapp.net/attachments/795512730940735508/881457112088186930/carbon.png?width=543&height=474"></a>
+<a href="https://github.com/MaaKoo-dev/lava-deezer"> <img src="https://cdn.discordapp.com/attachments/795512730940735508/881460887817429012/carbon.png"></a>
