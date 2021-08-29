@@ -23,7 +23,7 @@ const deezer = new DeezerClient([
 
 (async () => {
     // Select node to use with its id.
-    const node = deezer.nodes.get("main");
+    const node = deezer.nodes.get("weebs");
 
     // Use Node#load to load album, playlist, and track
     const album = await node.load("https://www.deezer.com/album/192713912");
