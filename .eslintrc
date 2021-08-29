@@ -1,0 +1,100 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "project": "tsconfig.json"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/explicit-member-accessibility": "error",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/restrict-template-expressions": [
+            "warn", { "allowAny": true, "allowBoolean": true }
+        ],
+        "@typescript-eslint/array-type": [
+            "warn", { "default": "array-simple", "readonly": "array-simple" }
+        ],
+        "@typescript-eslint/adjacent-overload-signatures": "warn",
+        "@typescript-eslint/await-thenable": "warn",
+        "@typescript-eslint/no-unused-vars": [
+            "warn", { 
+                "varsIgnorePattern": "^_", "argsIgnorePattern": "^_",
+                "caughtErrors": "all", "caughtErrorsIgnorePattern": "^_"
+            }
+        ],
+        "@typescript-eslint/ban-types": "error",
+        "@typescript-eslint/prefer-readonly": "warn",
+        "@typescript-eslint/comma-dangle": "error",
+        "@typescript-eslint/comma-spacing": [
+            "warn", { "before": false, "after": true }
+        ],
+        "@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
+        "@typescript-eslint/consistent-type-assertions": [
+            "warn", { "assertionStyle": "as", "objectLiteralTypeAssertions": "allow-as-parameter" }
+        ],
+        "@typescript-eslint/consistent-type-definitions": ["warn", "interface"],
+        "@typescript-eslint/dot-notation": "error",
+        "@typescript-eslint/func-call-spacing": ["warn", "never"],
+        "@typescript-eslint/indent": ["warn", 4],
+        "@typescript-eslint/keyword-spacing": "warn",
+        "@typescript-eslint/lines-between-class-members": [
+            "warn", "always", { "exceptAfterSingleLine": true }
+        ],
+        "@typescript-eslint/member-delimiter-style": "error",
+        "@typescript-eslint/member-ordering": "warn",
+        "@typescript-eslint/method-signature-style": "error",
+        "@typescript-eslint/no-base-to-string": "error",
+        "@typescript-eslint/no-duplicate-imports": "error",
+        "@typescript-eslint/no-extra-parens": "error",
+        "@typescript-eslint/semi": "error",
+        "@typescript-eslint/no-extraneous-class": [
+            "error", { "allowStaticOnly": true, "allowWithDecorator": true }
+        ],
+        "@typescript-eslint/no-invalid-void-type": "error",
+        "@typescript-eslint/type-annotation-spacing": "warn",
+        "quotes": ["warn", "double"],
+        "no-empty-function": [
+            "warn", { "allow": [ "constructors" ] }
+        ],
+        "operator-linebreak": ["warn", "before"],
+        "implicit-arrow-linebreak": ["warn", "beside"],
+        "eol-last": "error",
+        "brace-style": ["warn", "1tbs"],
+        "semi-spacing": "warn",
+        "key-spacing": "warn",
+        "object-curly-spacing": ["warn", "always"],
+        "array-bracket-spacing": "warn",
+        "space-in-parens": ["warn", "never"],
+        "computed-property-spacing": ["warn", "never"],
+        "arrow-spacing": "warn",
+        "generator-star-spacing": ["warn", "after"],
+        "switch-colon-spacing": "warn",
+        "space-before-blocks": "warn",
+        "spaced-comment": "warn",
+        "template-curly-spacing": "warn",
+        "yield-star-spacing": ["warn", "after"],
+        "space-before-function-paren": [
+            "warn", {"anonymous": "never", "named": "never", "asyncArrow": "always"}
+        ],
+        "no-multi-spaces": "warn"
+    }
+}
