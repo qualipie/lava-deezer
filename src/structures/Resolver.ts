@@ -1,5 +1,5 @@
 import petitio from "petitio";
-import { DeezerTrack, LavalinkTrack, LavalinkTrackResponse, DeezerAlbum, DeezerArtist, DeezerPlaylist, UnresolvedTrack } from "../typings";
+import { DeezerTrack, LavalinkTrack, LavalinkTrackResponse, DeezerAlbum, DeezerArtist, DeezerPlaylist, UnresolvedTrack, DeezerData } from "../typings";
 import Util from "../Util";
 import Node from "./Node";
 
@@ -32,11 +32,10 @@ export default class Resolver {
     }
 
     public async getArtist(id: string): Promise<LavalinkTrackResponse | any> {
-        const metaData = await petitio(`${this.client.baseURL}/artist/${id}`).json();
-        const deezerArtist: DeezerArtist = await petitio(`${this.client.baseURL}/artist/${id}/top?limit=50`).json();
-        const unresolvedArtistTracks = deezerArtist.data.map(track => track && this.buildUnresolved(track)) ?? [];
-        return this.buildResponse("PLAYLIST", this.autoResolve ? ((await Promise.all(unresolvedArtistTracks.map((x) => x.resolve()))).filter(Boolean) as LavalinkTrack[]) : unresolvedArtistTracks, metaData.title);
-
+        const deezerArtist: DeezerArtist = await petitio(`${this.client.baseURL}/artist/${id}`).json();
+        const { data }: DeezerData = await petitio(`${this.client.baseURL}/artist/${id}/top?limit=50`).json();
+        const unresolvedArtistTracks = data.map(track => track && this.buildUnresolved(track)) ?? [];
+        return this.buildResponse("PLAYLIST", this.autoResolve ? ((await Promise.all(unresolvedArtistTracks.map((x) => x.resolve()))).filter(Boolean) as LavalinkTrack[]) : unresolvedArtistTracks, deezerArtist.name);
     }
 
     private async resolve(unresolvedTrack: UnresolvedTrack): Promise<LavalinkTrack | undefined> {

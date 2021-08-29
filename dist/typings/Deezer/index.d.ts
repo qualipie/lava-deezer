@@ -3,6 +3,8 @@ export interface DeezerArtist {
     name: string;
     tracklist: string;
     type: string;
+}
+export interface DeezerData {
     data: DeezerTrack[];
 }
 export interface DeezerAlbum {
